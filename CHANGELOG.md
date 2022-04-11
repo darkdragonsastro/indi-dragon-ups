@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.1...v1.1.2) (2022-04-11)
+
+
+### Bug Fixes
+
+* another update to workflows ([36317b3](https://github.com/darkdragonsastro/indi-dragon-ups/commit/36317b3b399b1cc68d00eeac8c612559d9b29973))
+
 ## [1.1.1](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.0...v1.1.1) (2022-04-11)
 
 
