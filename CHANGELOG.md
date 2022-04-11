@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.0...v1.1.1) (2022-04-11)
+
+
+### Bug Fixes
+
+* update credentials to use PAT ([2b0ba99](https://github.com/darkdragonsastro/indi-dragon-ups/commit/2b0ba9976900966979d571655649462267257729))
+
 # [1.1.0](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.0.0...v1.1.0) (2022-04-11)
 
 
