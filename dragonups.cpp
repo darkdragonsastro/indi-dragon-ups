@@ -61,7 +61,7 @@ bool DragonUPS::initProperties()
                        60, IPS_IDLE);
 
     // WeatherInterface
-    addParameter("SENSOR_VOLTAGE", "Voltage (V)", 13.5, 14.0, 5);
+    addParameter("SENSOR_VOLTAGE", "Voltage (V)", 12.5, 14.0, 5);
     setCriticalParameter("SENSOR_VOLTAGE");
 
     tcpConnection = new Connection::TCP(this);
