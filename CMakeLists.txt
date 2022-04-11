@@ -48,7 +48,12 @@ install(
     DESTINATION ${INDI_DATA_DIR}
 )
 
+execute_process(
+    COMMAND bash "-c" "lsb_release --codename | cut -f2" 
+    OUTPUT_VARIABLE DISTRO OUTPUT_STRIP_TRAILING_WHITESPACE
+)
 set(CPACK_GENERATOR "DEB")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Rick Bassham")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "libindi1 (>= 1.9)")
+set(CPACK_DEBIAN_FILE_NAME "${PROJECT_NAME}-${CPACK_PACKAGE_VERSION}-${DISTRO}.deb")
 include(CPack)
