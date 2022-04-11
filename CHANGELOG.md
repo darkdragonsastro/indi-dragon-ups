@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.2...v1.1.3) (2022-04-11)
+
+
+### Bug Fixes
+
+* add makefile ([713408f](https://github.com/darkdragonsastro/indi-dragon-ups/commit/713408f8dc47df685a1e23909f506eb07396eed4))
+
 ## [1.1.2](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.1...v1.1.2) (2022-04-11)
 
 
