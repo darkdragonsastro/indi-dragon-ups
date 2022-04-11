@@ -1,0 +1,61 @@
+name: build-all
+
+on:
+  repository_dispatch:
+    types: [build-trigger]
+
+jobs:
+  build-ubuntu-amd64:
+    strategy:
+      matrix:
+        os: ["impish", "focal"]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Docker Setup Buildx
+        uses: docker/setup-buildx-action@v1.0.3
+        id: buildx
+        with:
+          install: true
+      - name: Available platforms
+        run: echo ${{ steps.buildx.outputs.platforms }}
+      - name: Get tag version
+        id: get_version
+        run: |
+          GITHUB_REF=${{ github.event.client_payload.ref }}
+          echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build the builder
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./ubuntu-amd64.Dockerfile
+          load: true
+          tags: build-ubuntu-amd64:${{ matrix.os }}
+          build-args: |
+            UBUNTU_VERSION=${{ matrix.os }}
+      - name: Build Package
+        run: |
+          docker run --rm -v `pwd`:/src -v `pwd`/output:/build build-ubuntu-amd64:${{ matrix.os }} /bin/bash -c 'cmake /src && cmake --build . && cpack .'
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: debs-ubuntu-amd64-${{matrix.os}}
+          path: |
+            output/*.deb
+
+  publish-release:
+    runs-on: ubuntu-20.04
+    needs: [build-ubuntu-amd64]
+    steps:
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          release_id: ${{ github.event.client_payload.release.id }}
+      - name: Delete drafts
+        uses: hugo19941994/delete-draft-releases@v0.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

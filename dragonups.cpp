@@ -41,7 +41,7 @@ std::unique_ptr<INDI::DragonUPS> DragonUPS(new INDI::DragonUPS());
 
 DragonUPS::DragonUPS() : WeatherInterface(this)
 {
-    setVersion(DLR_VERSION_MAJOR, DLR_VERSION_MINOR);
+    setVersion(VERSION_MAJOR, VERSION_MINOR);
 }
 
 /************************************************************************************

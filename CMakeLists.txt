@@ -8,8 +8,8 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules/")
 
 find_package(INDI 1.9 REQUIRED)
 
-set(DLR_VERSION_MAJOR 1)
-set(DLR_VERSION_MINOR 0)
+set(VERSION_MAJOR 1)
+set(VERSION_MINOR 0)
 
 configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake
