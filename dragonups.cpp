@@ -124,7 +124,7 @@ void DragonUPS::TimerHit()
 
 void DragonUPS::processStatus(const char *status)
 {
-    long voltage = 0;
+    unsigned int voltage = 0;
 
     sscanf(status, "CV%X", &voltage);
 
