@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.6...v1.1.7) (2022-04-12)
+
+
+### Bug Fixes
+
+* use apt instead of apt-get ([a4acc8d](https://github.com/darkdragonsastro/indi-dragon-ups/commit/a4acc8dff2059b42ecaed771db6cb8e4fc179137))
+
 ## [1.1.6](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.5...v1.1.6) (2022-04-12)
 
 
