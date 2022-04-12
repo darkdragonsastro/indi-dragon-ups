@@ -60,4 +60,4 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           event-type: build-trigger
-          client-payload: '{"ref": "'v${{ steps.semantic.outputs.new_release_version }}'", "sha": "${{ github.sha }}", "release": { "id": "${{ steps.create_release.outputs.id }}", "html_url": "${{ steps.create_release.outputs.html_url }}", "upload_url": "${{ steps.create_release.outputs.upload_url }}" }}'
+          client-payload: '{"ref": "v${{ steps.semantic.outputs.new_release_version }}", "sha": "${{ github.sha }}", "release": { "id": "${{ steps.create_release.outputs.id }}", "html_url": "${{ steps.create_release.outputs.html_url }}", "upload_url": "${{ steps.create_release.outputs.upload_url }}" }}'
