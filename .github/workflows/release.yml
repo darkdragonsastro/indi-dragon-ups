@@ -50,8 +50,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
+          tag_name: 'v${{ steps.semantic.outputs.new_release_version }}'
+          release_name: 'v${{ steps.semantic.outputs.new_release_version }}'
           draft: true
           body: ${{ steps.get_notes.outputs.NOTES }}
       - name: Dispatch build-trigger
@@ -60,4 +60,4 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           event-type: build-trigger
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "release": { "id": "${{ steps.create_release.outputs.id }}", "html_url": "${{ steps.create_release.outputs.html_url }}", "upload_url": "${{ steps.create_release.outputs.upload_url }}" }}'
+          client-payload: '{"ref": "'v${{ steps.semantic.outputs.new_release_version }}'", "sha": "${{ github.sha }}", "release": { "id": "${{ steps.create_release.outputs.id }}", "html_url": "${{ steps.create_release.outputs.html_url }}", "upload_url": "${{ steps.create_release.outputs.upload_url }}" }}'
