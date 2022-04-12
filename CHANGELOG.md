@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.7...v1.1.8) (2022-04-12)
+
+
+### Bug Fixes
+
+* try without dockerx ([0d314e6](https://github.com/darkdragonsastro/indi-dragon-ups/commit/0d314e6f65ba94d8cdd0aebd3b3d0234fb5b7641))
+
 ## [1.1.7](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.6...v1.1.7) (2022-04-12)
 
 
