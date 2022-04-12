@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.5...v1.1.6) (2022-04-12)
+
+
+### Bug Fixes
+
+* use latest ubuntu to build ([1040cce](https://github.com/darkdragonsastro/indi-dragon-ups/commit/1040cceaff813919f4ea14fcc3230b1c046437af))
+
 ## [1.1.5](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.4...v1.1.5) (2022-04-12)
 
 
