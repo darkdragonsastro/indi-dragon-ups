@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.4...v1.1.5) (2022-04-12)
+
+
+### Bug Fixes
+
+* attempt to fix auto builds again ([66df63b](https://github.com/darkdragonsastro/indi-dragon-ups/commit/66df63ba2acb6d7f785257a535854eba1fb6b0ee))
+
 ## [1.1.4](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.3...v1.1.4) (2022-04-12)
 
 
