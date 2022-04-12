@@ -4,15 +4,15 @@ FROM ubuntu:${UBUNTU_VERSION}
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV TZ=America/New_York
 
-RUN apt-get update && apt-get upgrade -y && rm -rf /var/lib/apt/lists/*
+RUN apt update && apt upgrade -y && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
     build-essential devscripts debhelper fakeroot cdbs software-properties-common cmake \
     && rm -rf /var/lib/apt/lists/*
 
 RUN add-apt-repository ppa:mutlaqja/ppa
 
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
     libindi-dev libnova-dev libz-dev libgsl-dev \
     && rm -rf /var/lib/apt/lists/*
 
