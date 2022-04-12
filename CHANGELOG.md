@@ -1,3 +1,10 @@
+## [1.1.13](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.12...v1.1.13) (2022-04-12)
+
+
+### Bug Fixes
+
+* fix asset paths ([609c815](https://github.com/darkdragonsastro/indi-dragon-ups/commit/609c815f4b9645da94cf943bb0c3eec4b7271711))
+
 ## [1.1.12](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.11...v1.1.12) (2022-04-12)
 
 
