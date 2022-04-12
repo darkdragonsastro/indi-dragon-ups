@@ -17,6 +17,13 @@ jobs:
           GITHUB_REF=${{ github.event.client_payload.ref }}
           echo ::set-output name=VERSION::${GITHUB_REF/\refs/tags\/v/}
           echo ::set-output name=VERSION_ONLY::${GITHUB_REF/v/}
+      - name: Get project name
+        id: get_project_name
+        run: |
+          PROJECT=$(cat CMakeLists.txt | grep project | sed 's/project(\(.*\) C CXX)/\1/')
+          echo ::set-output name=PROJECT_NAME::${PROJECT}
+          echo ${PROJECT}
+          echo ${PROJECT_NAME}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build the builder
