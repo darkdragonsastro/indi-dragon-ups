@@ -1,3 +1,11 @@
+## [1.1.9](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.8...v1.1.9) (2022-04-12)
+
+
+### Bug Fixes
+
+* create release off of tag ([33ac105](https://github.com/darkdragonsastro/indi-dragon-ups/commit/33ac105f7568157653dea56d9c67a068721e4e27))
+* update client-payload ([0f2a554](https://github.com/darkdragonsastro/indi-dragon-ups/commit/0f2a554d09f9f5248f370dbe6aae19032dd35dd3))
+
 ## [1.1.8](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.7...v1.1.8) (2022-04-12)
 
 
