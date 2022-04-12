@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.16...v1.1.17) (2022-04-12)
+
+
+### Bug Fixes
+
+* get project name after checking out the code ([5ed9584](https://github.com/darkdragonsastro/indi-dragon-ups/commit/5ed95840c438e067b93b1af02bc3f3471032edda))
+
 ## [1.1.16](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.15...v1.1.16) (2022-04-12)
 
 
