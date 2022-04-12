@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: ["impish", "focal"]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -47,7 +47,7 @@ jobs:
             output/*.deb
 
   publish-release:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     needs: [build-ubuntu-amd64]
     steps:
       - uses: eregon/publish-release@v1
