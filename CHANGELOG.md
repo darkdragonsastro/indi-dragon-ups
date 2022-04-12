@@ -1,3 +1,10 @@
+## [1.1.16](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.15...v1.1.16) (2022-04-12)
+
+
+### Bug Fixes
+
+* extract project name from CMakeLists.txt ([b4bb609](https://github.com/darkdragonsastro/indi-dragon-ups/commit/b4bb609d30cf39376eb96c78c00bb9e73fc2eff5))
+
 ## [1.1.15](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.14...v1.1.15) (2022-04-12)
 
 
