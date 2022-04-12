@@ -1,3 +1,10 @@
+## [1.1.15](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.14...v1.1.15) (2022-04-12)
+
+
+### Bug Fixes
+
+* try to fix version again ([c643a9b](https://github.com/darkdragonsastro/indi-dragon-ups/commit/c643a9b3b23c0b56f186adaef92e23b68931979a))
+
 ## [1.1.14](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.13...v1.1.14) (2022-04-12)
 
 
