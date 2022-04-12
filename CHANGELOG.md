@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.11...v1.1.12) (2022-04-12)
+
+
+### Bug Fixes
+
+* set upload_url properly ([992e7e6](https://github.com/darkdragonsastro/indi-dragon-ups/commit/992e7e620c3c766c0abef2d26837382e01464fe5))
+
 ## [1.1.11](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.10...v1.1.11) (2022-04-12)
 
 
