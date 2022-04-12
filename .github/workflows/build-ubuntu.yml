@@ -15,7 +15,8 @@ jobs:
         id: get_version
         run: |
           GITHUB_REF=${{ github.event.client_payload.ref }}
-          echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\/v/}
+          echo ::set-output name=VERSION::${GITHUB_REF/\refs/tags\/v/}
+          echo ::set-output name=VERSION_ONLY::${GITHUB_REF/\refs/tags\//}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build the builder
@@ -35,14 +36,14 @@ jobs:
         with:
           name: debs-ubuntu-amd64-${{matrix.os}}
           path: |
-            output/indi-dragon-ups-${{ steps.get_version.outputs.VERSION }}-${{ matrix.os }}.deb
+            output/indi-dragon-ups-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
       - uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           upload_url: ${{ github.event.client_payload.release.upload_url }}
-          asset_path: output/indi-dragon-ups-${{ steps.get_version.outputs.VERSION }}-${{ matrix.os }}.deb
-          asset_name: indi-dragon-ups-${{ steps.get_version.outputs.VERSION }}-${{ matrix.os }}.deb
+          asset_path: output/indi-dragon-ups-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
+          asset_name: indi-dragon-ups-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
           asset_content_type:  application/vnd.debian.binary-package 
 
   publish-release:
