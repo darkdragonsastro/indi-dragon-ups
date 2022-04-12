@@ -24,8 +24,6 @@ jobs:
         run: |
           PROJECT=$(cat CMakeLists.txt | grep project | sed 's/project(\(.*\) C CXX)/\1/')
           echo ::set-output name=PROJECT_NAME::${PROJECT}
-          echo ${PROJECT}
-          echo ${PROJECT_NAME}
       - name: Build the builder
         uses: docker/build-push-action@v2
         with:
@@ -43,14 +41,14 @@ jobs:
         with:
           name: debs-ubuntu-amd64-${{matrix.os}}
           path: |
-            output/indi-dragon-ups-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
+            output/${{ steps.get_project_name.outputs.PROJECT_NAME }}-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
       - uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           upload_url: ${{ github.event.client_payload.release.upload_url }}
-          asset_path: output/indi-dragon-ups-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
-          asset_name: indi-dragon-ups-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
+          asset_path: output/${{ steps.get_project_name.outputs.PROJECT_NAME }}-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
+          asset_name: ${{ steps.get_project_name.outputs.PROJECT_NAME }}-${{ steps.get_version.outputs.VERSION_ONLY }}-${{ matrix.os }}.deb
           asset_content_type:  application/vnd.debian.binary-package 
 
   publish-release:
