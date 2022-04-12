@@ -35,7 +35,15 @@ jobs:
         with:
           name: debs-ubuntu-amd64-${{matrix.os}}
           path: |
-            output/*.deb
+            output/indi-dragon-ups-${{ steps.get_version.VERSION }}-${{ matrix.os }}.deb
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: output/indi-dragon-ups-${{ steps.get_version.VERSION }}-${{ matrix.os }}.deb
+          asset_name: indi-dragon-ups-${{ steps.get_version.VERSION }}-${{ matrix.os }}.deb
+          asset_content_type:  application/vnd.debian.binary-package 
 
   publish-release:
     runs-on: ubuntu-latest
