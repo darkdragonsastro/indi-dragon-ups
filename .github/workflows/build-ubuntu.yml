@@ -29,7 +29,7 @@ jobs:
             UBUNTU_VERSION=${{ matrix.os }}
       - name: Build Package
         run: |
-          docker run --rm -v `pwd`:/src -v `pwd`/output:/build build-ubuntu-amd64:${{ matrix.os }} /bin/bash -c 'cmake /src && cmake --build . && cpack .'
+          docker run --rm -v `pwd`:/src -v `pwd`/output:/build build-ubuntu-amd64:${{ matrix.os }} /bin/bash -c 'cmake /src && cmake --build . && cpack . && cp *.deb /output'
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
