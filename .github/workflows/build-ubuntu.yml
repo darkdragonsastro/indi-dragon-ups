@@ -17,6 +17,8 @@ jobs:
           GITHUB_REF=${{ github.event.client_payload.ref }}
           echo ::set-output name=VERSION::${GITHUB_REF/\refs/tags\/v/}
           echo ::set-output name=VERSION_ONLY::${GITHUB_REF/v/}
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: Get project name
         id: get_project_name
         run: |
@@ -24,8 +26,6 @@ jobs:
           echo ::set-output name=PROJECT_NAME::${PROJECT}
           echo ${PROJECT}
           echo ${PROJECT_NAME}
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Build the builder
         uses: docker/build-push-action@v2
         with:
