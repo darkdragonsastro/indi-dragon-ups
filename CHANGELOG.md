@@ -1,3 +1,10 @@
+## [1.1.10](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.9...v1.1.10) (2022-04-12)
+
+
+### Bug Fixes
+
+* copy the deb to output ([8e8d321](https://github.com/darkdragonsastro/indi-dragon-ups/commit/8e8d32110542fe498b57f4023a77c47ad3dad0e7))
+
 ## [1.1.9](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.8...v1.1.9) (2022-04-12)
 
 
