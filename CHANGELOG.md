@@ -1,3 +1,10 @@
+# [2.0.0](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.18...v2.0.0) (2022-04-14)
+
+
+### Features
+
+* include load in driver ([f9bc568](https://github.com/darkdragonsastro/indi-dragon-ups/commit/f9bc56859f4fa8863a283027114c1daad17958c5))
+
 ## [1.1.18](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.17...v1.1.18) (2022-04-12)
 
 
