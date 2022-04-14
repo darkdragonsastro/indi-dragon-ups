@@ -65,7 +65,7 @@ private:
 
     Connection::TCP *tcpConnection{ nullptr };
 
-    INumber VoltageSensorN[1];
+    INumber VoltageSensorN[4];
     INumberVectorProperty VoltageSensorNP;
 
     int PortFD { -1 };

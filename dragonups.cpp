@@ -57,7 +57,10 @@ bool DragonUPS::initProperties()
     addAuxControls();
 
     IUFillNumber(&VoltageSensorN[0], "SENSOR_VOLTAGE", "Voltage (V)", "%4.1f", 0, 999, 100, 0);
-    IUFillNumberVector(&VoltageSensorNP, VoltageSensorN, 1, getDeviceName(), "VOLTAGE_SENSORS", "Sensors", MAIN_CONTROL_TAB, IP_RO,
+    IUFillNumber(&VoltageSensorN[1], "POWER_SUPPLY_LOAD", "Power Supply (A)", "%4.1f", 0, 999, 100, 0);
+    IUFillNumber(&VoltageSensorN[2], "MAIN_LOAD", "Main Load (A)", "%4.1f", 0, 999, 100, 0);
+    IUFillNumber(&VoltageSensorN[3], "BATTERY_LOAD", "Battery (A)", "%4.1f", 0, 999, 100, 0);
+    IUFillNumberVector(&VoltageSensorNP, VoltageSensorN, 4, getDeviceName(), "VOLTAGE_SENSORS", "Sensors", MAIN_CONTROL_TAB, IP_RO,
                        60, IPS_IDLE);
 
     // WeatherInterface
@@ -124,11 +127,18 @@ void DragonUPS::TimerHit()
 
 void DragonUPS::processStatus(const char *status)
 {
-    unsigned int voltage = 0;
+    double voltage = 0.0;
+    double ps = 0.0;
+    double ml = 0.0;
+    double ba = 0.0;
 
-    sscanf(status, "CV%X", &voltage);
+    sscanf(status, "CV%lf;PS%lf;ML%lf;BA%lf", &voltage, &ps, &ml, &ba);
 
-    VoltageSensorN[0].value = voltage / 10.0;
+    VoltageSensorN[0].value = voltage;
+    VoltageSensorN[1].value = ps;
+    VoltageSensorN[2].value = ml;
+    VoltageSensorN[3].value = ba;
+
     VoltageSensorNP.s = IPS_OK;
     IDSetNumber(&VoltageSensorNP, nullptr);
 
