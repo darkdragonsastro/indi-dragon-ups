@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v2.0.0...v2.0.1) (2022-04-15)
+
+
+### Bug Fixes
+
+* update max voltage ([24e6e02](https://github.com/darkdragonsastro/indi-dragon-ups/commit/24e6e022b8631ff678a3b506c4eff9e58f3a56d1))
+
 # [2.0.0](https://github.com/darkdragonsastro/indi-dragon-ups/compare/v1.1.18...v2.0.0) (2022-04-14)
 
 
